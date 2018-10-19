@@ -18,7 +18,7 @@ def ground_truth_imfilter(image, imfilter):
                         image[:,:,ch], imfilter, mode='constant')
         # output[:,:,ch] = ndimage.filters.convolve(
         #                 image[:,:,ch], imfilter, mode='constant')
-        output[:,:,ch] = convolve2d(image[:,:,ch], imfilter, mode='same', boundary='fill', fillvalue=0)
+        # output[:,:,ch] = convolve2d(image[:,:,ch], imfilter, mode='same', boundary='fill', fillvalue=0)
                         
     return output
 
@@ -73,11 +73,8 @@ def main():
     sobel_filter = np.array([[-1, 0, 1],
                              [-2, 0, 2],
                              [-1, 0, 1]])
-    s = np.array([[1, 0, -1],
-                  [2, 0, -2],
-                  [1, 0, -1]])
     sobel_image = my_imfilter(test_image, sobel_filter)
-    sobel_image_gt = ground_truth_imfilter(test_image, s)
+    sobel_image_gt = ground_truth_imfilter(test_image, sobel_filter)
     #0.5 added because the output image is centered around zero otherwise and mostly black
     print('sobel test')
     check(sobel_image, sobel_image_gt)

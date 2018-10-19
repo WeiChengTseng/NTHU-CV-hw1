@@ -1,6 +1,7 @@
 # Wei-Cheng Tseng <span style="color:red">(104061146)</span>
 
 # Project 1 / Image Filtering and Hybrid Images
+public repo: https://github.com/WeiChengTseng/NTHU-CV-hw1.git
 
 ## Overview
 The project is related to image filtering and [hybrid images](http://cvcl.mit.edu/hybridimage/) using a simplified version of the SIGGRAPH 2006 [paper](http://cvcl.mit.edu/publications/OlivaTorralb_Hybrid_Siggraph06.pdf) by Oliva, Torralba, and Schyns.  
@@ -28,20 +29,18 @@ In this work, we use a lowpass filter to remove the high-frequency features from
 			```
 2. hybrid images
 	* construct a 2D guass filter
-		- `cutoff_frequency`: the standard deviation of the Gaussian blur that will remove the high frequencies from one image and remove the low frequencies from another image
+		- `cutoff_frequency`: the standard deviation of the Gaussian blur that will remove the high frequencies from one image and remove the low frequencies from another image. The larger cutoff_frequency is, the blurer the image is.
 		- code:  
 		`gaussian_filter = gauss2D(shape=(cutoff_frequency*4+1,cutoff_frequency*4+1), sigma = cutoff_frequency)`
 	* use the guass filter to remove the high frequency features
 	* get high frequency feature by minusing the low frequency feature
 
-## Excution
-	$ python proj.py
 
-## Installation
+## Installation and Excution
 * package
 	> numpy, matplotlib, scipy
 * How to run your code?
-	> `python proj1.py`
+	> `$ python code/proj.py`
 ### Results
 
 <table border=1>
@@ -78,6 +77,15 @@ In this work, we use a lowpass filter to remove the high-frequency features from
 <img src="fish_high.png"  width="24%"/>
 <img src="submarine_fish_hybrid.png" width="24%"/>
 <img src="submarine_fish_hybrid_scales.png" width="24%"/>
+</td>
+</tr>
+
+<tr>
+<td>
+<img src="plane_low.png" width="24%"/>
+<img src="bird_high.png"  width="24%"/>
+<img src="plane_bird_hybrid.png" width="24%"/>
+<img src="plane_bird_hybrid_scales.png" width="24%"/>
 </td>
 </tr>
 

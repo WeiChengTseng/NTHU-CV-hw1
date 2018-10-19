@@ -20,8 +20,8 @@ def main():
     imgs = [('dog.bmp','cat.bmp'), ('bicycle.bmp', 'motorcycle.bmp'), 
             ('submarine.bmp', 'fish.bmp'), ('marilyn.bmp', 'einstein.bmp'),
             ('trump_g.jpg', 'shi_g.jpg'), ('lane.jpg', 'sun.jpg'),
-            ('tsai.jpg', 'yoda.jpg')]
-    cutoff_freq = [7, 7, 5, 3, 3, 5, 3]
+            ('tsai.jpg', 'yoda.jpg'), ('plane.bmp', 'bird.bmp')]
+    cutoff_freq = [7, 7, 5, 3, 3, 5, 3, 7]
     for index, img in enumerate(imgs):
         image1 = mpimg.imread(os.path.join(main_path, 'data', img[0]))
         image2 = mpimg.imread(os.path.join(main_path, 'data', img[1]))

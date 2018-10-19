@@ -57,8 +57,8 @@ def my_imfilter(image, imfilter):
         # gray scale image
         img_h, img_w = image.shape
         image = np.pad(image, ((f_h//2,f_h//2), (f_w//2,f_w//2)), 'constant', constant_values=0)
-        for ch in range(img_c):
-            for i in range(img_h):
+        for ch in range(img_h):
+            for i in range(img_w):
                 output[i][j] = np.sum(imfilter * image[i:i+f_h, j:j+f_w])
         
 
